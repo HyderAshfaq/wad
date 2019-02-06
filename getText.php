@@ -22,15 +22,12 @@ function display()
         "https://www.facebook.com/groups/1944204655670756/","https://localhost/waducpf18/finalterm/",
         "https://www.youtube.com/watch?v=LSDxjp6sWYQ","https://epaper.dawn.com/?page=03_02_2019_001",
         "https://www.google.com/search?q=extract","abcd");
-    $pattern = '/\w*:\/\/[\w*\.]?([\w\.\-]+).*/';
+    $pattern = '/\w+:\/\/(w{3}\.)?(\w*[\.\w\-]+)/';
     foreach ($string as $arr)
     {
         if(preg_match( $pattern, $arr , $matches))
         {
-            echo "<li>$matches[1]</li>";
-        }
-        else{
-            echo "not found";
+            echo "<li>$matches[2]</li>";
         }
     }
 
